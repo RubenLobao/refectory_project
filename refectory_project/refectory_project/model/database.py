@@ -26,7 +26,6 @@ class Usuario(Base):
     tipo = Column(Enum(TipoUsuarioEnum), nullable=False)
     
     presencas = relationship("Presenca", back_populates="usuario")
-    logs = relationship("Log", back_populates="usuario")
 
 class Presenca(Base):
     __tablename__ = "presencas"
