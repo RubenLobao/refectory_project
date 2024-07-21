@@ -15,6 +15,12 @@ class TipoUsuarioEnum(enum.Enum):
     funcionario = "funcionario"
     visitante = "visitante"
 
+class TipoUsuario(Base):
+    __tablename__ = "Tipo de Usuários"
+
+    id = Column(Integer, primary_key=True, index=True)
+    tipo = Column(String(100), nullable=False)
+
 class Usuario(Base):
     __tablename__ = "usuarios"
     

@@ -1,0 +1,4 @@
+Requisitos Sistema de Refeitório
+
+-> Criar uma tabela de tipos de usuários
+-> RestAPI em Python
