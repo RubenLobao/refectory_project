@@ -16,10 +16,12 @@ class TipoUsuarioEnum(enum.Enum):
     visitante = "visitante"
 
 class TipoUsuario(Base):
-    __tablename__ = "Tipo de Usuários"
+    __tablename__ = "tipo_de_usuario"
 
     id = Column(Integer, primary_key=True, index=True)
-    tipo = Column(String(100), nullable=False)
+    tipo = Column(String(100), nullable=False, unique=true)
+
+    usuarios = relationship("Usuario", back_populates="tipo_de_usuario")
 
 class Usuario(Base):
     __tablename__ = "usuarios"
@@ -43,4 +45,9 @@ class Presenca(Base):
     
     usuario = relationship("Usuario", back_populates="presencas")
 
+def init_db():
+    Base.metadata.create_all(bind=engine)
+
+if __name__ == "__main__":
+    init_db()
 
