@@ -10,11 +10,6 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 
-class TipoUsuarioEnum(enum.Enum):
-    aluno = "aluno"
-    funcionario = "funcionario"
-    visitante = "visitante"
-
 class TipoUsuario(Base):
     __tablename__ = "tipo_de_usuario"
 
