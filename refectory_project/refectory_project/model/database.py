@@ -26,7 +26,6 @@ class Usuario(Base):
     matricula = Column(String(50), unique=True, nullable=False)
     email = Column(String(100), unique=True, nullable=False)
     senha = Column(String(255), nullable=False)
-    tipo = Column(Enum(TipoUsuarioEnum), nullable=False)
     
     presencas = relationship("Presenca", back_populates="usuario")
 
