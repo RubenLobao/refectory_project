@@ -25,7 +25,7 @@ class Usuario(Base):
     matricula = Column(String(50), unique=True, nullable=False)
     email = Column(String(100), unique=True, nullable=False)
     senha = Column(String(255), nullable=False)
-    id_tipo_usuario = Column(Integer, ForeignKey('tipo_de_usuario.id'), nullable=True)
+    id_tipo_usuario = Column(Integer, ForeignKey('tipo_de_usuario.id'), nullable=False)
 
     tipo_de_usuario = relationship("TipoUsuario", back_populates = "usuarios")
     
